@@ -1,6 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Next.js SPA Runway</h1>
+<div align="center">
 
-This is a template for creating SPAs using React Router instead of Next's built-in router
+A staring point for your next Single Page App with [Next.js](https://nextjs.org/)
+
+[![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+
+</div>
+
+This project is a template for creating SPAs or "Hybrid SPAs". It uses the popular React Router for client-side routing, as we as utilizes Next's built-in router for both [Static Generation](https://nextjs.org/docs/basic-features/pages#static-generation-recommended) and  [Server-side Rendering](https://nextjs.org/docs/basic-features/pages#server-side-rendering).
+
+
+The project was originally bootstrapped by [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). So all modifications should work for your typical Next.js app after v9.5.
+
+
+## Feature Roadmap
+
+✅ [ESLint ](https://eslint.org/)  
+✅ [Prettier](https://prettier.io/)  
+✅ [Typescript](https://www.typescriptlang.org/)  
+✅ [React Router v6](https://reactrouter.com/) for client-side routing  
+⬜️ [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for testing  
+⬜️ [React Context API](https://reactjs.org/docs/context.html) for "global" data  
+
+Please feel free to remove features that's not needed in your project.
+
 
 ## Getting Started
 
@@ -14,11 +37,21 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+In the project directory, you can run:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### `npm run build`
+
+Builds the application for production usage<br />
+
+### `npm start`
+
+Starts a Next.js production server<br />
+
+### `npm run lint`
+
+Sets up Next.js' built-in ESLint configuration<br />
 
 ## Learn More
 
