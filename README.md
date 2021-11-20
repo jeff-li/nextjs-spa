@@ -19,7 +19,7 @@ The project was originally bootstrapped by [`create-next-app`](https://github.co
 ✅ [Prettier](https://prettier.io/)  
 ✅ [Typescript](https://www.typescriptlang.org/)  
 ✅ [React Router v6](https://reactrouter.com/) for client-side routing  
-⬜️ [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for testing  
+✅ [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for testing (transforming with [ts-jest](https://kulshekhar.github.io/ts-jest/))  
 ⬜️ [React Context API](https://reactjs.org/docs/context.html) for "global" data  
 
 Please feel free to remove features that's not needed in your project.

@@ -1,9 +1,28 @@
 {
+  "env": {
+    "es6": true,
+    "browser": true,
+    "jest": true
+  },
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "overrides": [
+    {
+      // enable the rule specifically for TypeScript files
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-function-return-type": ["error"]
+      }
+    }
   ]
 }
   
