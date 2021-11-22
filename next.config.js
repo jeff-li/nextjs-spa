@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
+  swcMinify: true,
   async rewrites() {
     // released in Next.js 9.5: allows you to  map an incoming request path to a different 
     // destination path, including external URLs.

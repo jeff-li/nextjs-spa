@@ -4,6 +4,8 @@
 A staring point for your next Single Page App with [Next.js](https://nextjs.org/)
 
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![codecov](https://codecov.io/gh/jeff-li/nextjs-spa-runway/branch/master/graph/badge.svg?token=qQds3epbPj)](https://codecov.io/gh/jeff-li/nextjs-spa-runway)
+[![Node Unit Tests](https://github.com/jeff-li/nextjs-spa-runway/actions/workflows/unit_test.yml/badge.svg)](https://github.com/jeff-li/nextjs-spa-runway/actions/workflows/unit_test.yml)
 
 </div>
 
@@ -19,7 +21,7 @@ The project was originally bootstrapped by [`create-next-app`](https://github.co
 ✅ [Prettier](https://prettier.io/)  
 ✅ [Typescript](https://www.typescriptlang.org/)  
 ✅ [React Router v6](https://reactrouter.com/) for client-side routing  
-⬜️ [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for testing  
+✅ [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for testing (transforming with [ts-jest](https://kulshekhar.github.io/ts-jest/))  
 ⬜️ [React Context API](https://reactjs.org/docs/context.html) for "global" data  
 
 Please feel free to remove features that's not needed in your project.
