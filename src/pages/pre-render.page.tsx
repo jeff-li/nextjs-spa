@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head'
+import { GetStaticPropsResult } from 'next';
 
 type PreRenderProps = {
   name: string;
@@ -21,7 +22,7 @@ const PreRender: React.FC<PreRenderProps> = ({ name }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(): Promise<GetStaticPropsResult<PreRenderProps>> {
   return {
     props: {
       name: "Server Static Generation pre-rendering"

@@ -1,7 +1,6 @@
 import React from 'react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
-import Index from './index';
+import Index from './index.page';
 
 describe('Index', () => {
   it('should render the index page', () => {
