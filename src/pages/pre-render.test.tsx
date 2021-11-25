@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import PreRender from './pre-render';
+import PreRender from './pre-render.page';
 
 describe('Layout', () => {
   it('should render the layout', () => {

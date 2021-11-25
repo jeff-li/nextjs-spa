@@ -19,6 +19,7 @@ The project was originally bootstrapped by [`create-next-app`](https://github.co
 
 ✅ [ESLint ](https://eslint.org/)  
 ✅ [Prettier](https://prettier.io/)  
+✅ Type and ESlint checking in development with [fork-ts-checker-webpack-plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin)  
 ✅ [Typescript](https://www.typescriptlang.org/)  
 ✅ [React Router v6](https://reactrouter.com/) for client-side routing  
 ✅ [Jest](https://jestjs.io/) and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) for testing (transforming with [ts-jest](https://kulshekhar.github.io/ts-jest/))  
@@ -39,6 +40,42 @@ yarn dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Type and ESlint Checking in Development
+Next.js disabled type checking for development after version 9.3.6 in order to improve performance and dev experience. However some people still prefer having this feature enabled for their development process, so that they can discover issues sooner and fix them without running `npm run build` repeatedly.
+
+This project uses a custom webpack configuration to run both type and Eslint checking during development. However, it increases development rebuild times significantly. If you prefer, you can easily remove this configuration in `next.config.js` and uninstall `fork-ts-checker-webpack-plugin`. 
+```js
+if(!isServer) {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
+    const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+    config.plugins.push(new ForkTsCheckerWebpackPlugin({
+        eslint: {
+            files: './src/**/*.{ts,tsx,js,jsx}'
+        }
+    }))
+}
+```
+
+Alternative you can run also run typescript compiler separately instead to achieve the same goal
+```json
+{
+  "scripts": {
+    "dev": "next dev",
+    "dev:ts": "npm run dev & npm run ts:watch",
+    "ts": "tsc --noEmit --incremental",
+    "ts:watch": "npm run ts --watch"
+  },
+}
+```
+
+## Type Checking in Testing
+This project uses `ts-jest` in `transform` to compile typescript files because `babel-jest` is purely transpilation and does not type-check results. You can remove all ts-jest related configurations if you prefer `babel-jest`,
+
+
+## Using `.page.tsx` Custom Page Extensions
+Next.js suggests following Jests convention of adding tests to the `__tests__` folder in the root directory. This project however places test files next to their related code. `next build` does not filter out `.test.tsx` files automatically and will raise errors, so the work-around is adding custom page extension `.page.tsx` which will tell `next` to ignore other non-page files.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -54,18 +91,3 @@ Starts a Next.js production server<br />
 ### `npm run lint`
 
 Sets up Next.js' built-in ESLint configuration<br />
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
