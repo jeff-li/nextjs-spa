@@ -1,7 +1,7 @@
 <h1 align="center">Next.js SPA</h1>
 <div align="center">
 
-A staring point for your next Single Page App with [Next.js](https://nextjs.org/)
+A starting point for your next Single Page App with [Next.js](https://nextjs.org/)
 
 [![MIT](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![codecov](https://codecov.io/gh/jeff-li/nextjs-spa-runway/branch/master/graph/badge.svg?token=qQds3epbPj)](https://codecov.io/gh/jeff-li/nextjs-spa)
